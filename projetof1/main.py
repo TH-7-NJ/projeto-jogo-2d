@@ -15,7 +15,8 @@ class Game:
         if name == "menu":
             self.scene = MenuScene(self)
         elif name == "game":
-            self.scene = GameScene(self)
+            fase = data.get("fase", 1) if data else 1
+            self.scene = GameScene(self, fase)
         elif name == "result":
             self.scene = ResultScene(self, data or {})
 
